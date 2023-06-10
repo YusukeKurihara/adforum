@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     public function post(){
-        return $this->belongTo(Post::class);
+        return $this->belongsTo(Post::class);
     }
     
     public function user(){
-        return $this->belongTo(User::class);
+        return $this->belongsTo(User::class);
     }
     use HasFactory;
 }
