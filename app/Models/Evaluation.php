@@ -11,4 +11,9 @@ class Evaluation extends Model
         return $this->hasMany(Post::class);
     }
     use HasFactory;
+    
+    public function getPost()
+    {
+        return $this->posts()->with('evaluation')->get();
+    }
 }
