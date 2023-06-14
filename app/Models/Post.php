@@ -9,6 +9,9 @@ class Post extends Model
 {
     protected $fillable = 
     [
+        'anime_id',
+        'user_id',
+        'evaluation_id',
         'body',
     ];
     
@@ -27,5 +30,4 @@ class Post extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
-    
 }
