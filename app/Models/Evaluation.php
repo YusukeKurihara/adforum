@@ -7,6 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Evaluation extends Model
 {
+    protected $fillable = 
+    [
+        'anime_id',
+        'user_id',
+        'evaluation_id',
+        'body',
+    ];
+    
     public function posts(){
         return $this->hasMany(Post::class);
     }

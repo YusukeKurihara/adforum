@@ -17,7 +17,7 @@
         <div class='evaluations'>
             <!--評価タグによる投稿の選別ボタン-->
             @foreach($evaluations as $evaluation)
-            <button class="evaluation" type="button" onclick="/posts/{{ $anime->id }}/{{ $evaluation->id }}">{{ $evaluation->tag }}</button>
+                <a href="/posts/{{ $anime->id }}/{{ $evaluation->id }}">{{ $evaluation->tag }}</a>
             @endforeach
         </div>
         <div class='posts'>
@@ -36,6 +36,12 @@
                 <div class='title'>
                     <h3 class='username'>{{ Auth::user()->name }}</h3>
                     <textarea name="post[body]" placeholder="投稿を記入"></textarea>
+                </div>
+                <div class='evaluations'>
+                    <!--評価を選ぶ-->
+                    @foreach($evaluations as $evaluation)
+                        <button class="evaluation" type="button" onclick="buttonClick()">{{ $evaluation->tag }}</button>
+                    @endforeach
                 </div>
                 <input type="submit" value="store"/>
             </form>

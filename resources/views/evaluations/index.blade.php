@@ -11,16 +11,22 @@
                 evaluation
             </x-slot>
             
-        <h1 class='title'>アニメgood</h1>
+        <h1 class='title'>
+            <a href="/posts/{{ $anime->id }}/{{ $evaluation->id }}">{{ $anime->title }}</a>
+        </h1>
         <div class='posts'>
             <!--掲示板本文-->
             <div class='post'>
-            @foreach($evaluations as $evaluation)
-                <p class='body'>{{ $evaluation->tag }}</p>
+            @foreach($posts as $post)
+                <a href="">{{ $post->user->name }}</a>
+                <p class='body'>{{ $post->body }}</p>
             @endforeach    
             </div>
         </div>
-        
+        <div class="footer">
+            <!--掲示板に戻る-->
+            <a href="/posts/{{ $anime->id }}">戻る</a>
+        </div>
             </x-app-layout>
     </body>
 </html>
