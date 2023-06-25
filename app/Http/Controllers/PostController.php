@@ -38,10 +38,11 @@ class PostController extends Controller
     {
         $user = auth()->user();
         $input = $request['post'];
-        $input['anime_id'] = $post->anime_id;
-        $input['user_id'] = $user->user_id;
+        $input['evaluation_id'] = $request['evaluation'];
+        $input['anime_id'] = $anime->id;
+        $input['user_id'] = $user->id;
         $post->fill($input)->save();
-        return redirect('/posts/' . $post->$anime->id);
+        return redirect('/posts/' . $anime->id);
     }
     
 }
