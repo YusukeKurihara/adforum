@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\EvaluationController;
+use App\Http\Controllers\AnimeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,8 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/search', [AnimeController::class,'index'])->name('animes.index');
+    //Route::get('/search',[AnimeController::class,'seasonsearch']);
     Route::get('/posts/{anime}',[PostController::class, 'index']);
     Route::get('/posts/{anime}/{evaluation}', [EvaluationController::class, 'index']);
     Route::post('/posts/{anime}',[PostController::class,'store']);

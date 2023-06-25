@@ -31,7 +31,7 @@
         </div>
         <div class='store'>
             <!--投稿フォーム-->
-            <form action="/posts/"{{ $anime->id }}, method="POST">
+            <form action="/posts/{{ $anime->id }}", method="POST">
                 @csrf
                 <div class='title'>
                     <h3 class='username'>{{ Auth::user()->name }}</h3>
@@ -40,10 +40,10 @@
                 <div class='evaluations'>
                     <!--評価を選ぶ-->
                     @foreach($evaluations as $evaluation)
-                        <button class="evaluation" type="button" onclick="buttonClick()">{{ $evaluation->tag }}</button>
+                        <button type="radio" name="evaluation" value="{{ $evaluation->id }}">{{ $evaluation->tag }}</button>
                     @endforeach
                 </div>
-                <input type="submit" value="store"/>
+                <button type="submit" value="store"/>
             </form>
         </div>
         <div class="footer">
