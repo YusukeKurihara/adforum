@@ -7,12 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Anime extends Model
 {
+    protected $fillable = [
+        'category_id',
+        'year',
+        'season',
+        'title',
+        'summary',
+        ];
+    
     public function posts(){
         return $this->hasMany(Post::class);
     }
     
     public function category(){
-        return $this->belongTo(Category::class);
+        return $this->belongsTo(Category::class);
     }
     use HasFactory;
 }
