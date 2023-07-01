@@ -41,4 +41,15 @@ class AnimeController extends Controller
         $anime = DB::table('animes')->select('year')->get();
         return view('animes/index')->with([$anime]);
     }*/
+    public function create()
+    {
+        return view('animes.animestore');
+    }
+    
+    public function store(Request $request, Anime $anime)
+    {
+        $input = $request['anime'];
+        $anime->fill($input)->save();
+        return redirect('/animestore');
+    }
 }

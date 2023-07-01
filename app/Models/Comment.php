@@ -14,5 +14,9 @@ class Comment extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+    
+    /*public function GetComment(){
+        return $this->comments()->with('post')->get();
+    }*/
     use HasFactory;
 }
