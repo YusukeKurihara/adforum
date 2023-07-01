@@ -26,6 +26,8 @@
             @foreach($posts as $post)
                 <a href="">{{ $post->user->name }}</a>
                 <p class='body'>{{ $post->body }}</p>
+                <a href="/posts/comments/{{ $post->id }}">コメントへ</a>
+                <br>
             @endforeach    
             </div>
         </div>

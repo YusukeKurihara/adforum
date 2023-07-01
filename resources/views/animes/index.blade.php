@@ -20,21 +20,18 @@
             </form>
         </div>
         <div>
-        <!--年、シーズンによる検索-->
-            <form action="", method="GET">
-                @csrf
-                <input type="submit" name="year" value="{{ $anime->year }}">
-            </form>
-        </div>
-        <div>
         <!--検索の出力結果表示-->
             @forelse($animes as $anime)
                 <tr>
-                    <td><a href="/search">{{ $anime->title }}</td>
+                    <td><a href="/posts/{{ $anime->id }}">{{ $anime->title }}</td>
                 </tr>
             @empty
             <td>No posts!!</td>
             @endforelse
+        </div>
+        <div>
+        <!--アニメ掲示板作成フォームへ-->
+            <a href="/animestore">新しい掲示板を作る</a>
         </div>
         </x-app-layout>
     </body>

@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Anime;
 use App\Models\Evaluation;
+use App\Models\Comment;
 
 class PostController extends Controller
 {
@@ -31,6 +32,14 @@ class PostController extends Controller
             'posts' => $post->get(),
             'anime' => $anime,
             'evaluations' => $evaluation->get(),
+            ]);
+    }
+    
+    public function comment (Comment $comment, Post $post)
+    {
+        return view('posts.comment')->with([
+            'comments' => $comment->get(),
+            'post' => $post,
             ]);
     }
     
