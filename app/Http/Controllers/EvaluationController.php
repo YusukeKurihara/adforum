@@ -17,9 +17,9 @@ class EvaluationController extends Controller
      * @return array Postモデルリスト
      */
     
-    public function index (Post $post, Anime $anime, Evaluation $evaluation)
+    public function evaluation (Post $post, Anime $anime, Evaluation $evaluation)
     {
-        return view('evaluations/index')->with([
+        return view('evaluations.evaluation')->with([
             'posts' => $evaluation->getPost(),
             'anime' => $anime,
             'evaluation' => $evaluation,

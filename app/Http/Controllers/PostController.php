@@ -35,14 +35,6 @@ class PostController extends Controller
             ]);
     }
     
-    public function comment (Comment $comment, Post $post)
-    {
-        return view('posts.comment')->with([
-            'comments' => $comment->get(),
-            'post' => $post,
-            ]);
-    }
-    
     public function store (Request $request, Post $post, User $user, Anime $anime)
     {
         $user = auth()->user();

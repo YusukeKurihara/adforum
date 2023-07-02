@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--evaluationsのほうのindex.blade.phpです。各評価タグに記載された投稿のみ表示します。-->
+<!--各評価タグに記載された投稿のみ表示します。-->
 <html>
     <head>
         <title>evaluation</title>
