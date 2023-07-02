@@ -23,24 +23,28 @@ class AnimeController extends Controller
     * @return Reposnse anime view
     */
     
-    public function index (Request $request)
+    public function search (Request $request)
     {
         $keyword = $request->input('keyword');
+        $year = $request->input('year');
+        $season = $request->input('season');
+        
         $query = Anime::query();
         if(!empty($keyword))
         {
-            $query->where('title', 'LIKE', "%{$keyword}%")
-                  ->orWhere('year', "$keyword");
+            $query->where('title', 'LIKE', "%{$keyword}%");
         }
+        
+        if(!empty($year) && !empty($season))
+        {
+            $query->where('year', 'LIKE', "{$year}")
+                  ->where('season', 'LIKE', "{$season}");
+        }
+        
         $animes = $query->get();
-        return view('animes.index', compact('animes','keyword'));
+        return view('animes.search', compact('animes','keyword'));
     }
     
-    /*public function seasonsearch (Anime $anime)
-    {
-        $anime = DB::table('animes')->select('year')->get();
-        return view('animes/index')->with([$anime]);
-    }*/
     public function create()
     {
         return view('animes.animestore');

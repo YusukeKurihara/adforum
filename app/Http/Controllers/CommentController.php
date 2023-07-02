@@ -22,14 +22,12 @@ class CommentController extends Controller
     * @params Object Anime // 引数の$animeはid=1のPostインスタンス
     * @return Reposnse anime view
     */
-    
-    /*public function index (Comment $comment, Post $post)
+    public function comment (Comment $comment, Post $post)
     {
-        return view('comments.index')->with([
-            'comments' => $comment->GetComment(),
+        return view('posts.comment')->with([
+            'comments' => $comment->get(),
             'post' => $post,
             ]);
-    }*/
-    
+    }
     
 }
