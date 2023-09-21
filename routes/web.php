@@ -22,7 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', [AnimeController::class,'search']);
+Route::get('/', [AnimeController::class,'search'])->name('search');
 Route::get('/animestore',[AnimeController::class,'create']);
 Route::get('/posts/comments/{post}',[CommentController::class,'comment']);
 Route::get('/posts/{anime}',[PostController::class, 'index']);
