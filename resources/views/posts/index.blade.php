@@ -3,7 +3,9 @@
 <html>
     <head>
         <title>forum</title>
-        <meta charset="utf-8">
+        <meta charset="utf-8"/>
+        <meta name="viewpoint", content="width=device-width, initial-scale=1.0"/>
+        @vite('resources/css/app.css')
     </head>
     <body>
         <x-app-layout>
@@ -11,7 +13,7 @@
                 forum
             </x-slot>
             
-        <h1 class='title'>
+        <h1 class='title text-4xl text-red-500 text-left font-semibold'>
             <a href="/posts/{{ $anime->id }}">{{ $anime->title }}</a>
         </h1>
         <div class='evaluations'>
