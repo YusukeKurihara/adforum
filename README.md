@@ -1,66 +1,47 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">アニメ感想掲示板</h1>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+##  制作背景
+私はアニメが好きで、見たアニメをほかの人がどう感じているのかを知るために、TwitterなどのSNSをよく閲覧します。<br><br>
+その時、Twitterでは「面白かった」などの肯定的な感想と「つまらなかった」という感想が、混合した状態で流れてきます。そのため、肯定的な感想を見たいのに否定的な感想を見ることを避けられません。否定的な意見を見てしまうと、「面白い」と思って見ていたアニメもつまらなく感じてしまいます。<br><br>
+そこで、肯定的な意見と否定的な意見を分けて表示する掲示板が必要だと感じました。
 
-## About Laravel
+##  概要
+アニメの感想を書ける掲示板です。投稿にタグをつけることで、感想が「肯定的」か「否定的」かで投稿を分けることができます。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+##  開発環境
+<b>使用言語：</b><br>
+- PHP
+- HTML
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<b>環境：</b><br>
+- Laravel(ver.9)
+- AWS(EC2＋Cloud9)
+- MySQL(MariaDB)
+- Github
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<b>デプロイ：</b><br>
+- Heroku
 
-## Learning Laravel
+##  機能
+・検索機能<br>
+掲示板を検索できます。アニメ名入力によるワード検索と、アニメの放送年度を検索する方法が使えます。<br>
+・投稿閲覧機能<br>
+掲示板に寄せられた投稿を閲覧することができます。投稿の内容（肯定的・否定的）ごとに、投稿を分けて表示することができます。<br>
+・投稿機能<br>
+投稿をすることができます。投稿の際には、その内容が肯定的か否定的か選んで、タグをつけてもらいます。<br>
+・コメント機能<br>
+掲示板に寄せられた投稿に、コメントを書くことができます。<br>
+・新規掲示板作成機能<br>
+新しい掲示板を作成できます。アニメ名、アニメの概要、放送年度、放送シーズンを入力します。<br>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+##  こだわり
+<b>肯定的・否定的と内容ごとに分けて表示できる投稿内容</b><br>
+掲示板の目玉として、掲示板に寄せられた投稿を分けて表示できるようにした。投稿者は、投稿時にその投稿が肯定的、否定的のどちらの内容かを選び、その結果によって投稿が分けられる仕組みとなっている。
+<br><br>
+<b>ワード検索も年度検索もできる検索機能
+</b><br>
+アニメを検索する際には、名前でも検索するが、アニメが放送された年度、シーズンでも検索する。そのため、検索はワード検索も、年度検索もできるようにした。特に、年度検索は、表記ゆれによる検索漏れがないように、掲示板を投稿する際にプルダウンメニューによる選択で表記ゆれが起きないようにした。<br><br>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+##  今後の計画
+- CSSによるデザインの工夫
+- 管理者機能の追加
