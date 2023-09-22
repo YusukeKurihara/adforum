@@ -1,9 +1,4 @@
 {
-<<<<<<< HEAD
-  "devDependencies": {
-    "tailwindcss": "^3.3.2"
-  }
-=======
     "private": true,
     "scripts": {
         "dev": "vite",
@@ -21,5 +16,4 @@
         "tailwindcss": "^3.3.2",
         "vite": "^4.0.0"
     }
->>>>>>> master
 }
